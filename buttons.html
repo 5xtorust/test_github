@@ -1,0 +1,123 @@
+<Style>
+  .subscribe-button {
+    background-color: rgb(200,0,0);
+    color: white;
+    border: none;
+    height: 36px;
+    width: 105px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 8px;
+    transition: opacity 1s; 
+  }
+
+  .subscribe-button:hover{
+ 
+    opacity: 0.5;
+
+  }
+
+.subscribe-button:active{
+  opacity: 0.4;
+}
+  
+.join-button{
+  background-color: white;
+  border-color: rgb(8, 86, 181);
+  border-style: solid;
+  border-width: 1px;
+  color: rgb(8, 86, 181);
+  height: 36px;
+  width: 62;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 1s,
+  color 1s
+
+}
+
+.join-button:hover{
+
+  background-color:rgb(8, 86, 181) ;
+  color: white;
+}
+
+.join-button:active{
+
+   opacity: 0.7;
+}
+
+.special-button {
+  padding: 10px;
+
+  .button-content {
+    position: relative;
+    width: fit-content;
+    --button-padding: 10px;
+    margin: var(--button-padding);
+    cursor: pointer;
+
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: #7fffd4c2;
+      height: calc(100% + 2 * var(--button-padding));
+      width: calc(100% + 2 * var(--button-padding));
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+
+    &:hover::after {
+      background-color: blueviolet;
+    }
+  }
+}
+
+
+.tweet-button{
+
+  background-color: rgb(43, 140, 185);
+  color: white;
+  border-color: rgb(43, 140, 185) ;
+  border-style: solid;
+  border-width: 2px;
+  height: 30px;
+  width: 85px;
+  border-radius: 15px;
+  font-weight: bold;
+  font-size: 13px;
+  cursor: pointer;
+  margin-left: 8px;
+  transition: box-shadow 0.15s;
+}
+
+.tweet-button:hover{
+box-shadow: 5px 5px 10px rgba(0,0,0,5);
+
+}
+
+
+</Style>
+<button class="subscribe-button">
+  SUBSCRIBE
+</button>
+<button class="join-button">
+  Join
+</button>
+<button class="tweet-button">
+  Tweet
+</button>
+<br/>
+<div class="special-button">
+  <div class="button-content">Specials</div>
+</div>
+
+<div class="special-button">
+  <div class="button-content">Specials 1</div>
+</div>
+
+<div class="special-button">
+  <div class="button-content">Specials 2</div>
+</div>
