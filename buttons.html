@@ -41,56 +41,6 @@
     opacity: 0.7;
   }
 
-  .size-button {
-    --button-padding: 10px;
-    padding: 10px;
-    cursor: pointer;
-
-    &.selected {
-      color: blueviolet;
-
-      .button-content::after {
-        background-color: white;
-      }
-    }
-
-    &:not(.selected) {
-      color: white;
-
-      &:hover .button-content::after {
-        opacity: 0.8;
-      }
-    }
-
-    .button-content {
-      position: relative;
-      width: fit-content;
-      margin: var(--button-padding);
-      user-select: none;
-
-      &::after {
-        content: "";
-        position: absolute;
-        border: 1.5px solid blueviolet;
-        background-color: blueviolet;
-        height: calc(100% + 2 * var(--button-padding));
-        width: calc(100% + 2 * var(--button-padding));
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: -1;
-        border-radius: calc(2 * var(--button-padding));
-      }
-    }
-  }
-
-  .size-selection {
-    display: flex;
-    &:not(:last-child) .button-content {
-      margin-right: 0;
-    }
-  }
-
   .tweet-button {
     background-color: rgb(43, 140, 185);
     color: white;
@@ -114,30 +64,3 @@
 <button class="subscribe-button">SUBSCRIBE</button>
 <button class="join-button">Join</button>
 <button class="tweet-button">Tweet</button>
-<br />
-<div class="size-selection">
-  <div class="size-button selected">
-    <div class="button-content">Small</div>
-  </div>
-
-  <div class="size-button">
-    <div class="button-content">Medium</div>
-  </div>
-
-  <div class="size-button">
-    <div class="button-content">Large</div>
-  </div>
-</div>
-
-<script>
-  document.querySelectorAll(".size-button").forEach((content) => {
-    content.addEventListener("click", (e) => {
-      // Remove .selected from all .size-button elements
-      document.querySelectorAll(".size-button").forEach((button) => {
-        button.classList.remove("selected");
-      });
-      // Add .selected to the parent .size-button of the clicked .button-content
-      e.target.closest(".size-button").classList.add("selected");
-    });
-  });
-</script>
